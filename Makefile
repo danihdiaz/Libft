@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I.
 SRC = ft_isalpha.c \
 ft_isdigit.c \
 ft_isalnum.c \
@@ -16,3 +16,10 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
+clean:
+	rm -f $(OBJ)
+fclean: clean
+	rm -f $(NAME)
+re: all clean
+
+.PHONY: all clean fclean re
