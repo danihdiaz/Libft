@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 11:46:55 by dhontani          #+#    #+#             */
-/*   Updated: 2026/01/15 11:53:34 by dhontani         ###   ########.fr       */
+/*   Created: 2026-01-16 16:03:17 by dhontani          #+#    #+#             */
+/*   Updated: 2026-01-16 16:03:17 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *str)
+size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-    int i = 0;
+    size_t	i;
 
-    while (str[i] != '\0')
-        i++;
-    return (i);
+    if (dstsize == 0)
+	
+
 }
+
