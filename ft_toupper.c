@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 11:46:55 by dhontani          #+#    #+#             */
-/*   Updated: 2026/01/15 11:53:34 by dhontani         ###   ########.fr       */
+/*   Created: 2026-01-16 10:25:20 by dhontani          #+#    #+#             */
+/*   Updated: 2026-01-16 10:25:20 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strlen(const char *str)
+int ft_toupper(int c)
 {
-    int i = 0;
-
-    while (str[i] != '\0')
-        i++;
-    return (i);
+    if (c >= 97 && c <= 122)
+        c -= 32;
+    return (c);
 }
