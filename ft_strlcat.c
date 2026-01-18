@@ -6,7 +6,7 @@
 /*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 16:03:17 by dhontani          #+#    #+#             */
-/*   Updated: 2026/01/18 19:07:03 by dhontani         ###   ########.fr       */
+/*   Updated: 2026/01/18 19:10:17 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
     size_t  j;
     size_t  k;
     size_t  disp;
+    size_t  origi;
     
     i = 0;
     j = 0;
@@ -31,6 +32,7 @@ size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
         i++;
     if (i == dstsize)
         return (dstsize + ft_strlen(src));
+    origi = i;
     disp = dstsize - i - 1;
     if (disp == 0)
         return (i + ft_strlen(src));
@@ -43,6 +45,5 @@ size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
         k++;
     }
     dst[i] = '\0';
-    return (i);
+    return (origi + ft_strlen(src));
 }
-
