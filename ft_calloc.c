@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-16 10:25:20 by dhontani          #+#    #+#             */
-/*   Updated: 2026-01-16 10:25:20 by dhontani         ###   ########.fr       */
+/*   Created: 2026-01-20 17:16:51 by dhontani          #+#    #+#             */
+/*   Updated: 2026-01-20 17:16:51 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int c)
+void *ft_calloc(size_t nmemb, size_t size)
 {
-    if (c >= 'a' && c <= 'z')
-        c = c -32;
-    return (c);
+    if (size != 0 && nmemb > SIZE_MAX / size)
+        return (NULL)
+    
 }
