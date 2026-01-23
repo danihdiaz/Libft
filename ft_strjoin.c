@@ -1,50 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-21 15:11:30 by dhontani          #+#    #+#             */
-/*   Updated: 2026-01-21 15:11:30 by dhontani         ###   ########.fr       */
+/*   Created: 2026-01-23 10:52:01 by dhontani          #+#    #+#             */
+/*   Updated: 2026-01-23 10:52:01 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
-	char	*p; 
 	size_t	j;
+	char	*r;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	r = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!r)
+		return (NULL);
 	i = 0;
-	j = 0;
-
-	if (s == NULL)
-		return (NULL);
-	p = malloc(len + 1);
-	if (!p)
-		return (NULL);
-	while (i != start && s[i] != '\0')
-		i++;
-	if (i == start)
+	while (s1[i])
 	{
-		while (s[i] && j < len)
-		{
-			p[j] = s[i];
-			j++;
-			i++;
-		}
+		r[i] = s1[i];
+		i++;
 	}
-	p[j] = '\0';
-	return (p);
+	j = 0;
+	while (s2[j])
+	{
+		r[i] = s2[j];
+		i++;
+		j++;
+	}
+	r[i] = '\0';
+	return (r);
 }
-/*
+
 int	main(void)
 {
-	printf("%s", ft_substr("abcdef", 3, 2));
+	printf("%s", ft_strjoin("hola", " mundo"));
 }
-*/
