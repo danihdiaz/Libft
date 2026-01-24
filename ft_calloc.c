@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
+/*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-20 17:16:51 by dhontani          #+#    #+#             */
-/*   Updated: 2026-01-20 17:16:51 by dhontani         ###   ########.fr       */
+/*   Created: 2026/01/20 17:16:51 by dhontani          #+#    #+#             */
+/*   Updated: 2026/01/24 18:24:26 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 #include "stdlib.h"
 #include "stdint.h"
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-    void *mem;
+	void	*mem;
 
-    if (size != 0 && nmemb > SIZE_MAX / size)
-        return (NULL);
-    mem = malloc(nmemb * size);
-    if (!mem)
-        return (NULL);
-    ft_bzero(mem, nmemb * size);
-    return (mem);
+	if (size != 0 && nmemb > SIZE_MAX / size)
+		return (NULL);
+	mem = malloc(nmemb * size);
+	if (!mem)
+		return (NULL);
+	ft_bzero(mem, nmemb * size);
+	return (mem);
 }
 /*
 int main(void)

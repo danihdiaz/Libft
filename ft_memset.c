@@ -3,24 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
+/*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-19 14:53:55 by dhontani          #+#    #+#             */
-/*   Updated: 2026-01-19 14:53:55 by dhontani         ###   ########.fr       */
+/*   Created: 2026/01/19 14:53:55 by dhontani          #+#    #+#             */
+/*   Updated: 2026/01/24 18:47:35 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memset(void  *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-    unsigned char *s1 = (unsigned char *)s;
-    unsigned char c1 = (unsigned char)c;
-    size_t i;
+	unsigned char	*s1;
+	unsigned char	c1;
+	size_t			i;
 
-    i = 0;
-    while (i < n)
-    {
-        s1[i] = c1;
-        i++;
-    }
-    return (s);
+	s1 = (unsigned char *)s;
+	c1 = (unsigned char)c;
+	i = 0;
+	while (i < n)
+	{
+		s1[i] = c1;
+		i++;
+	}
+	return (s);
 }

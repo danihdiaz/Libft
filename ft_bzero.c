@@ -3,27 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
+/*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-19 15:19:06 by dhontani          #+#    #+#             */
-/*   Updated: 2026-01-19 15:19:06 by dhontani         ###   ########.fr       */
+/*   Created: 2026/01/19 15:19:06 by dhontani          #+#    #+#             */
+/*   Updated: 2026/01/24 18:34:33 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "stdio.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    unsigned char *s1 = (unsigned char *)s;
-    size_t i;
+	unsigned char	*s1;
+	size_t			i;
 
-    i = 0;
-    while (i < n)
-    {
-        s1[i] = '\0';
-        i++;
-    }
+	s1 = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		s1[i] = '\0';
+		i++;
+	}
 }
 /*
 int main(void)

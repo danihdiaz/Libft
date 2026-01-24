@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
+/*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-23 11:22:00 by dhontani          #+#    #+#             */
-/*   Updated: 2026-01-23 11:22:00 by dhontani         ###   ########.fr       */
+/*   Created: 2026/01/23 11:22:00 by dhontani          #+#    #+#             */
+/*   Updated: 2026/01/24 18:57:55 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	while (end >= start && ft_strchr(set, s1[end]))
 		end--;
-
 	res = malloc((end - start + 2));
 	if (!res)
 		return (NULL);
-
 	i = 0;
 	while (start <= end)
 	{
@@ -42,6 +40,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	}
 	res[i] = '\0';
-
 	return (res);
 }

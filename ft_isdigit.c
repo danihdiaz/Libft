@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Untitled-1                                         :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
+/*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-13 15:15:02 by dhontani          #+#    #+#             */
-/*   Updated: 2026-01-13 15:15:02 by dhontani         ###   ########.fr       */
+/*   Created: 2026/01/13 15:15:02 by dhontani          #+#    #+#             */
+/*   Updated: 2026/01/24 18:28:01 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c >= 48 && c <= 57)
-        return (1);
-    else
-        return(0);
+	if (c >= 48 && c <= 57)
+		return (1);
+	else
+		return (0);
 }
