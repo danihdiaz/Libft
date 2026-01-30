@@ -26,7 +26,7 @@ int	ft_atoi(const char *nptr)
 		i++;
 	if (nptr[i] == 43)
 		i++;
-	if (nptr[i] == 45)
+	else if (nptr[i] == 45)
 	{
 		sign = -sign;
 		i++;

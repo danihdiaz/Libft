@@ -13,6 +13,7 @@ SRC = 	ft_isalpha.c \
 		ft_toupper.c \
 		ft_strlcat.c \
 		ft_atoi.c \
+		ft_itoa.c \
 		ft_bzero.c \
 		ft_calloc.c \
 		ft_memchr.c \
@@ -22,6 +23,8 @@ SRC = 	ft_isalpha.c \
 		ft_memset.c \
 		ft_split.c \
 		ft_strchr.c \
+		ft_strmapi.c \
+		ft_striteri.c \
 		ft_strdup.c \
 		ft_strjoin.c \
 		ft_strnstr.c \

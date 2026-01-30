@@ -40,6 +40,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
+	if (*s1 == '\0')
+		return (ft_strdup(""));
 	findlimits(s1, set, &start, &end);
 	if (start > end)
 		return (ft_strdup(""));
