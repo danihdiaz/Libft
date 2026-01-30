@@ -6,7 +6,7 @@
 /*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:52:01 by dhontani          #+#    #+#             */
-/*   Updated: 2026/01/26 12:22:21 by dhontani         ###   ########.fr       */
+/*   Updated: 2026/01/30 12:08:11 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	r[i] = '\0';
 	return (r);
 }
-
+/*
 int	main(void)
 {
 	printf("%s", ft_strjoin("hola", " mundo"));
 }
+*/

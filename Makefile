@@ -34,7 +34,7 @@ SRC = 	ft_isalpha.c \
 		ft_putstr_fd.c \
 		ft_lstnew.c \
 		ft_lstiter.c \
-		ft_lst_add_front.c \
+		ft_lstadd_front.c \
 		ft_lstclear.c \
 		ft_lstdelone.c \
 		ft_lstmap.c \
