@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   Untitled-1                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-02-03 12:57:17 by dhontani          #+#    #+#             */
-/*   Updated: 2026-02-03 12:57:17 by dhontani         ###   ########.fr       */
+/*   Created: 2026-02-04 12:34:03 by dhontani          #+#    #+#             */
+/*   Updated: 2026-02-04 12:34:03 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#include "ft_printf.h"
 
-# include "libft.h"
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdint.h>
-
-int	ft_printf(const char *format, ...);
-
-#endif
+int	ft_putchar(char c)
+{
+	return (write(1, &c, 1));
+}

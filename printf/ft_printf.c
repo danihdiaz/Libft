@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	formatreat(char c, va_list vargs)
 {
@@ -20,7 +20,7 @@ static int	formatreat(char c, va_list vargs)
 		return (ft_printstr(vargs));
 	else if (c == 'p')
 		return (ft_printvoid(vargs));
-	else if (c == 'd')
+/*	else if (c == 'd')
 		return (ft_imprimir numero decimal base 10);
 	else if (c == 'i')
 		return ("" entero base 10)
@@ -31,7 +31,7 @@ static int	formatreat(char c, va_list vargs)
 	else if (c == 'X')
 		return (hexamayusculas)
 	else if (c == '%')
-		write(1, &c, 1);
+		write(1, &c, 1); */
 	return (0);
 }
 

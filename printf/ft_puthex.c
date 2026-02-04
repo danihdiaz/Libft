@@ -5,20 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-02-03 16:20:54 by dhontani          #+#    #+#             */
-/*   Updated: 2026-02-03 16:20:54 by dhontani         ###   ########.fr       */
+/*   Created: 2026-02-04 12:32:34 by dhontani          #+#    #+#             */
+/*   Updated: 2026-02-04 12:32:34 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printstr(va_list vargs)
+int	ft_puthex(uintptr_t n)
 {
-	char	*c;
+	int		count;
+	char	*base;
 
-	c = va_arg(vargs, char *);
-	if (!c)
-		return (write(1, "(null)", 6));
-	ft_putstr_fd(c, 1);
-	return (ft_strlen(c));
+	base = "0123456789abcdef";
+	count = 0;
+	if (n >= 16)
+		count += ft_puthex(n / 16);
+	count += ft_putchar(base[n % 16]);
+	return (count);
 }

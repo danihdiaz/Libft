@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Untitled-1                                         :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-02-03 16:20:54 by dhontani          #+#    #+#             */
-/*   Updated: 2026-02-03 16:20:54 by dhontani         ###   ########.fr       */
+/*   Created: 2026-02-03 12:57:17 by dhontani          #+#    #+#             */
+/*   Updated: 2026-02-03 12:57:17 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_printstr(va_list vargs)
-{
-	char	*c;
+# include "libft.h"
+# include <unistd.h>
+# include <stdarg.h>
+# include <stdint.h>
 
-	c = va_arg(vargs, char *);
-	if (!c)
-		return (write(1, "(null)", 6));
-	ft_putstr_fd(c, 1);
-	return (ft_strlen(c));
-}
+int	ft_printf(const char *format, ...);
+int	ft_printchar(va_list vargs);
+int	ft_printstr(va_list vargs);
+int	ft_printvoid(va_list vargs);
+int	ft_putchar(char c);
+int	ft_puthex(uintptr_t n);
+
+#endif

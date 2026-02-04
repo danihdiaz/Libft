@@ -1,19 +1,13 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Makefile                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-02-03 13:05:33 by dhontani          #+#    #+#             */
-/*   Updated: 2026-02-03 13:05:33 by dhontani         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-NAME = printf.a
+NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I. -Ilibft
-SRC = ft_printf.c
+SRC = ft_printf.c \
+	ft_printchar.c \
+	ft_printstr.c \
+	ft_printvoid.c \
+	ft_putchar.c \
+	ft_puthex.c
+
 OBJ = $(SRC:.c=.o)
 
 %.o: %.c
