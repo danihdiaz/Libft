@@ -3,27 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printvoid.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
+/*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-02-03 16:36:19 by dhontani          #+#    #+#             */
-/*   Updated: 2026-02-03 16:36:19 by dhontani         ###   ########.fr       */
+/*   Created: 2026/02/03 16:36:19 by dhontani          #+#    #+#             */
+/*   Updated: 2026/02/05 15:29:06 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	ft_printvoid(va_list vargs)
+int	ft_printvoid(void *p)
 {
-	void		*c;
-	uintptr_t	z;
+	uintptr_t	n;
 
-	c = va_arg(vargs, void *);
-	z = (uintptr_t)c;
-	if (z == 0)
-	{
-		return (ft_putstr_fd("(nil)", 1), 5);
-	}
-	write(1, "0x", 2);
-	return (ft_puthex(z) + 2);
+	n = (uintptr_t)p;
+	if (!n)
+		return (ft_printstr("(nil)"));
+	ft_printstr("0x");
+	return (ft_puthex_base(n, 0) + 2);
 }

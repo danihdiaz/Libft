@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
+/*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-02-03 12:57:17 by dhontani          #+#    #+#             */
-/*   Updated: 2026-02-03 12:57:17 by dhontani         ###   ########.fr       */
+/*   Created: 2026/02/03 12:57:17 by dhontani          #+#    #+#             */
+/*   Updated: 2026/02/05 15:37:58 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,13 @@
 # include <stdint.h>
 
 int	ft_printf(const char *format, ...);
-int	ft_printchar(va_list vargs);
-int	ft_printstr(va_list vargs);
-int	ft_printvoid(va_list vargs);
-int	ft_putchar(char c);
-int	ft_puthex(uintptr_t n);
+int	ft_printchar(int c);
+int	ft_printstr(char *c);
+int	ft_printvoid(void *p);
+int	ft_puthex_base(uintptr_t n, int uppercase);
+int	ft_printint(int n);
+int	ft_printunint(unsigned int n);
+int	ft_printhex_x(unsigned int n);
+int	ft_printhex_up(unsigned int n);
 
 #endif

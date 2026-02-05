@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Untitled-1                                         :+:      :+:    :+:   */
+/*   ft_printstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
+/*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-02-03 16:20:54 by dhontani          #+#    #+#             */
-/*   Updated: 2026-02-03 16:20:54 by dhontani         ###   ########.fr       */
+/*   Created: 2026/02/03 16:20:54 by dhontani          #+#    #+#             */
+/*   Updated: 2026/02/05 14:46:45 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printstr(va_list vargs)
+int	ft_printstr(char *c)
 {
-	char	*c;
-
-	c = va_arg(vargs, char *);
 	if (!c)
 		return (write(1, "(null)", 6));
 	ft_putstr_fd(c, 1);

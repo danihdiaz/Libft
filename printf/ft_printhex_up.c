@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Untitled-1                                         :+:      :+:    :+:   */
+/*   ft_printhex_X.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
+/*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-02-04 12:34:03 by dhontani          #+#    #+#             */
-/*   Updated: 2026-02-04 12:34:03 by dhontani         ###   ########.fr       */
+/*   Created: 2026/02/05 15:30:03 by dhontani          #+#    #+#             */
+/*   Updated: 2026/02/05 15:31:36 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_printhex_up(unsigned int n)
 {
-	return (write(1, &c, 1));
+	return (ft_puthex_base(n, 1));
 }

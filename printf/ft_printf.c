@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dhontani <dhontani@student.42.fr>          #+#  +:+       +#+        */
+/*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-02-03 12:03:06 by dhontani          #+#    #+#             */
-/*   Updated: 2026-02-03 12:03:06 by dhontani         ###   ########.fr       */
+/*   Created: 2026/02/03 12:03:06 by dhontani          #+#    #+#             */
+/*   Updated: 2026/02/05 15:41:21 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,21 @@
 static int	formatreat(char c, va_list vargs)
 {
 	if (c == 'c')
-		return (ft_printchar(vargs));
+		return (ft_printchar(va_arg(vargs, int)));
 	else if (c == 's')
-		return (ft_printstr(vargs));
+		return (ft_printstr(va_arg(vargs, char *)));
 	else if (c == 'p')
-		return (ft_printvoid(vargs));
-/*	else if (c == 'd')
-		return (ft_imprimir numero decimal base 10);
-	else if (c == 'i')
-		return ("" entero base 10)
+		return (ft_printvoid(va_arg(vargs, void *)));
+	else if (c == 'd' || c == 'i')
+		return (ft_printint(va_arg(vargs, int)));
 	else if (c == 'u')
-		return ("" nº decimal base 10 sinsigno);
+		return (ft_printunint(va_arg(vargs, unsigned int)));
 	else if (c == 'x')
-		return (hexaenminusculas)
+		return (ft_printhex_x(va_arg(vargs, unsigned int)));
 	else if (c == 'X')
-		return (hexamayusculas)
+		return (ft_printhex_up(va_arg(vargs, unsigned int)));
 	else if (c == '%')
-		write(1, &c, 1); */
+		return (write(1, &c, 1));
 	return (0);
 }
 
@@ -46,7 +44,7 @@ int	ft_printf(const char *format, ...)
 	count = 0;
 	while (format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' || format[i + 1])
 		{
 			count += formatreat(format[i + 1], vargs);
 			i++;

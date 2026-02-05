@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printchar.c                                     :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhontani <dhontani@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 15:55:30 by dhontani          #+#    #+#             */
-/*   Updated: 2026/02/05 14:48:02 by dhontani         ###   ########.fr       */
+/*   Created: 2026/02/04 12:32:34 by dhontani          #+#    #+#             */
+/*   Updated: 2026/02/05 15:24:03 by dhontani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printchar(int c)
+int	ft_puthex_base(uintptr_t n, int uppercase)
 {
-	char	z;
+	int		count;
+	char	*base;
 
-	z = (char)c;
-	write(1, &z, 1);
-	return (1);
+	count = 0;
+	if (uppercase)
+		base = "0123456789ABCDEF";
+	else
+		base = "0123456789abcdef";
+	if (n >= 16)
+		count += ft_puthex_base(n / 16, uppercase);
+	count += ft_printchar(base[n % 16]);
+	return (count);
 }

@@ -5,8 +5,11 @@ SRC = ft_printf.c \
 	ft_printchar.c \
 	ft_printstr.c \
 	ft_printvoid.c \
-	ft_putchar.c \
-	ft_puthex.c
+	ft_puthex_base.c \
+	ft_printint.c \
+	ft_printunint.c \
+	ft_printhex_x.c \
+	ft_printhex_up.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -17,8 +20,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	make -C libft
-	cp libft/libft.a $(NAME)
-	ar rcs $(NAME) $(OBJ)
+	ar rcs $(NAME) libft/libft.a $(OBJ)
 
 clean:
 	rm -f $(OBJ)
