@@ -12,15 +12,21 @@
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-
-# include <string.h>
+/*
+# ifndef BUFF_SIZE
+#  define BUFF_SIZE 42
+# endif
+*/
 # include <stdlib.h>
+# include <unistd.h>
 
 char	*get_next_line(int fd);
 int		has_newline(char *stash);
 char	*extract_line(char *stash);
 char	*update_stash(char *stash);
 char	*stash_join(char *buffer, char *stash);
-char	*free_all(char *buffer, char *stash);
+size_t	ft_strlen(const char *str);
+char	*read_and_join(int fd, char *stash, char *buffer, int *eof);
+char	*join_safe(char *stash, char *buffer);
 
 #endif

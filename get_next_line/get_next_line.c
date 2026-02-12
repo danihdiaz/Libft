@@ -12,30 +12,48 @@
 
 #include "get_next_line.h"
 
+char	*read_and_join(int fd, char *stash, char *buffer, int *eof)
+{
+	int		n;
+	char	*tmp;
+
+	n = read(fd, buffer, BUFFER_SIZE);
+	if (n == -1)
+		return (free(stash), NULL);
+	if (n == 0)
+	{
+		*eof = 1;
+		return (stash);
+	}
+	buffer[n] = '\0';
+	tmp = stash_join(stash, buffer);
+	if (!tmp)
+		return (NULL);
+	return (tmp);
+}
+
 char	*get_next_line(int fd)
 {
 	static char	*stash;
 	char		*buffer;
 	char		*line;
-	int			n;
+	int			eof;
 
-	if (fd < 0 || BUFF_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buffer = malloc(BUFF_SIZE + 1);
-	if (!buf)
+	buffer = malloc(BUFFER_SIZE + 1);
+	if (!buffer)
 		return (NULL);
-	while (!has_newline(stash))
+	eof = 0;
+	while (!has_newline(stash) && !eof)
 	{
-		n = read(fd, buffer, BUFF_SIZE);
-		if (n == -1)
-			return (free_all(buffer, stash));
-		if (n == 0)
-			break ;
-		buffer[n] = '\0';
-		stash = stash_join(buffer, stash);
+		stash = read_and_join(fd, stash, buffer, &eof);
+		if (!stash)
+		{
+			free(buffer);
+			return (NULL);
+		}
 	}
-	if (!stash)
-		return (free_all(buffer, NULL));
 	line = extract_line(stash);
 	stash = update_stash(stash);
 	return (free(buffer), line);
