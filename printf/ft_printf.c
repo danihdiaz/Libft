@@ -42,9 +42,11 @@ int	ft_printf(const char *format, ...)
 	va_start(vargs, format);
 	i = 0;
 	count = 0;
+	if (!format)
+		return (-1);
 	while (format[i])
 	{
-		if (format[i] == '%' || format[i + 1])
+		if (format[i] == '%' && format[i + 1])
 		{
 			count += formatreat(format[i + 1], vargs);
 			i++;

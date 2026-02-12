@@ -16,7 +16,7 @@ int	ft_printchar(int c)
 {
 	char	z;
 
-	z = (char)c;
+	z = (unsigned char)c;
 	write(1, &z, 1);
 	return (1);
 }

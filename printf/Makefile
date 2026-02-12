@@ -20,13 +20,13 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	make -C libft
-	ar rcs $(NAME) libft/libft.a $(OBJ)
+	ar rcs $(NAME) $(OBJ) libft/*.o
 
 clean:
 	rm -f $(OBJ)
 	make -C libft clean
 
-fclean: clean
+fclean: clean	
 	rm -f $(NAME)
 	make -C libft fclean
 
